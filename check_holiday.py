@@ -40,7 +40,7 @@ class CheckHoliday:
     holidays = None
     with request.urlopen(cls.GOVERMENT_CSV_URL) as res:
       holidays = res.read().decode('shift_jis')
-    return f"{date.year}/{date.month}/{date.day}" in holidays
+    return f"{date.year}/{date.month}/{date.day}," in holidays
 
   def __init__(self):
     pass
